@@ -3,6 +3,8 @@ Metalsmith Sugar
 
 Syntactic sugar to make it sweeter to use [Metalsmith].
 
+**This is not a plugin!** Instead, you use this to load other plugins.
+
 [![npm version][npm-badge]][npm-link]
 [![Build Status][travis-badge]][travis-link]
 [![Dependencies][dependencies-badge]][dependencies-link]
