@@ -1,0 +1,37 @@
+{
+    "name": "metalsmith-sugar",
+    "version": "1.0.0",
+    "description": "Additional helpers to make your Metalsmith experience even sweeter.",
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "script/test",
+        "watch": "script/watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/connected-world-services/metalsmith-sugar.git"
+    },
+    "keywords": [
+    ],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/connected-world-services/metalsmith-sugar/issues"
+    },
+    "homepage": "https://github.com/connected-world-services/metalsmith-sugar#readme",
+    "devDependencies": {
+        "codecov": "~1.0.1",
+        "eslint": "~3.16.1",
+        "istanbul": "~0.4.5",
+        "jasmine": "~2.5.3",
+        "nodemon": "~1.11.0"
+    },
+    "dependencies": {
+        "debug": "~2.6.3",
+        "metalsmith": "~2.3.0",
+        "metalsmith-timer": "~0.0.2"
+    },
+    "engines": {
+        "node": ">= 4.0.0"
+    }
+}
