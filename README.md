@@ -39,7 +39,7 @@ All of the typical Metalsmith configuration is supported. The exported factory c
         clean: true,
         concurrency: Infinity,
         destination: "build",
-        directory: __dirname, // Defaults to the module's `${__dirname}/../..`
+        directory: __dirname, // Defaults to module's `${__dirname}/../../..`
         frontmatter: true,
         metalsmith: require("metalsmith"), // Lets you override the constructor
         source: "src"
@@ -97,7 +97,7 @@ The factory accepts configuration. All of these properties are optional. What yo
         // The default value here should automatically find the project's
         // root folder. If not, please set this to `__dirname` or any other
         // working value for your structure.
-        directory: path.resolve(__dirname, "..", ".."),
+        directory: path.resolve(__dirname, "..", "..", ".."),
 
         // Enable or disable frontmatter loading. Boolean. Passed to
         // metalsmith.frontmatter().
