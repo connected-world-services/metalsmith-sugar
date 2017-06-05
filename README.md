@@ -50,6 +50,20 @@ In addition, the [`metalsmith-timer`] module is added for each plugin so you are
     DEBUG=metalsmith-timer npm run build
 
 
+Use With [`metalsmith-debug-ui`]
+--------------------------------
+
+There's a beautiful UI that can help follow your files and their metadata during your build process. It's part of [`metalsmith-debug-ui`] and it simply builds a bunch of extra files in the `${destination}/debug-ui/` folder.  You can easily use `metalsmith-sugar` with this wonderful plugin. In fact, it is even a little sweeter to use these together because the middleware functions will have reasonable names assigned and your UI will look better.
+
+    var sugar = require("metalsmith-sugar")({
+        // configuration goes here for metalsmith-sugar
+    });
+
+    // This line is what you need to get the debug UI to work really well
+    // with metalsmith-sugar.
+    require("metalsmith-debug-ui").patch(sugar.metalsmith());
+
+
 Installation
 ------------
 
@@ -139,7 +153,7 @@ Returns the Metalsmith instance being used. It should be considered a bug if you
 
 The first syntax is just like how you would call `metalsmith.use()`. The second is the sugar version that will call `require()` on your behalf and pass along extra arguments to the module's factory. There's an example at the top explaining how to use this.
 
-In addition to loading the module, a call to `metalsmith-timer` will indicate when the plugin has finished. This will say the middleware's name when you pass a module name (string). When you pass a middleware function, the timer message will say the function's name when available, or indicate that it is an anonymous function.
+In addition to loading the module, calls to `metalsmith-timer` will indicate when the plugin has finished. This will say the middleware's name when you pass a module name (string). When you pass a middleware function, the timer message will say the function's name when available, or indicate that it is an anonymous function. With this extra logging you can determine how long it takes each plugin to run.
 
 
 License
@@ -156,6 +170,7 @@ This software is licensed under a [MIT license][LICENSE] that contains additiona
 [devdependencies-link]: https://david-dm.org/connected-world-services/metalsmith-sugar#info=devDependencies
 [LICENSE]: LICENSE.md
 [metalsmith]: http://www.metalsmith.io/
+[`metalsmith-debug-ui`]: https://github.com/leviwheatcroft/metalsmith-debug-ui
 [`metalsmith-timer`]: https://github.com/deltamualpha/metalsmith-timer
 [npm-badge]: https://img.shields.io/npm/v/metalsmith-sugar.svg
 [npm-link]: https://npmjs.org/package/metalsmith-sugar

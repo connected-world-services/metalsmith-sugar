@@ -193,7 +193,7 @@ describe("metalsmith-sugar", () => {
                 fn = jasmine.createSpy("fn");
                 sugar.use(fn);
                 expect(fn).not.toHaveBeenCalled();
-                expect(sugar.metalsmith().use).toHaveBeenCalledWith(fn);
+                expect(sugar.metalsmith().use).toHaveBeenCalledWith(jasmine.any(Function));
             });
             it("discards extra parameters with middleware function", () => {
                 var fn;
@@ -201,7 +201,7 @@ describe("metalsmith-sugar", () => {
                 fn = jasmine.createSpy("fn");
                 sugar.use(fn, 1, 2, 3);
                 expect(fn).not.toHaveBeenCalled();
-                expect(sugar.metalsmith().use).toHaveBeenCalledWith(fn);
+                expect(sugar.metalsmith().use).toHaveBeenCalledWith(jasmine.any(Function));
             });
             it("works with anonymous functions", () => {
                 var fn;
@@ -213,17 +213,17 @@ describe("metalsmith-sugar", () => {
                 }
 
                 sugar.use(fn);
-                expect(sugar.metalsmith().use).toHaveBeenCalledWith(fn);
+                expect(sugar.metalsmith().use).toHaveBeenCalledWith(jasmine.any(Function));
             });
             it("accepts a module name", () => {
                 // Relative to the library!
                 sugar.use("../spec/mock/fake-module");
-                expect(sugar.metalsmith().use).toHaveBeenCalledWith("fakeModule result []");
+                expect(sugar.metalsmith().use).toHaveBeenCalledWith(jasmine.any(Function));
             });
             it("accepts a module name and arguments", () => {
                 // Relative to the library!
                 sugar.use("../spec/mock/fake-module", 1, "two");
-                expect(sugar.metalsmith().use).toHaveBeenCalledWith("fakeModule result [1,\"two\"]");
+                expect(sugar.metalsmith().use).toHaveBeenCalledWith(jasmine.any(Function));
             });
         });
     });

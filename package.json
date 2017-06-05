@@ -1,6 +1,6 @@
 {
     "name": "metalsmith-sugar",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "Additional helpers to make your Metalsmith experience even sweeter.",
     "main": "lib/index.js",
     "scripts": {
